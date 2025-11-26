@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AngelLips - GlowUp</title>
+  <!-- Importa o Tailwind CSS para estilização rápida -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+
+    /* Fundo translúcido no conteúdo principal */
+    main {
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 1rem;
+      padding: 2rem;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 3rem;
+    }
+
+    /* Cards de produto */
+    .product-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5em;
+      padding: 1.5rem;
+      background-color: #fff;
+      border-radius: 0.75rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    @media (min-width: 768px) {
+      .product-item {
+        flex-direction: row;
+        text-align: left;
+      }
+      .product-item .product-image-container {
+        flex-shrink: 0;
+        width: 200px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .product-item .product-details {
+        flex-grow: 1;
+      }
+    }
+
+    .product-item img {
+      max-height: 200px;
+      object-fit: contain;
+      margin-bottom: 1rem;
+    }
+
+    header, footer {
+      background-color: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(6px);
+    }
+
+    body {
+  background-image: url('ANGELSOZINHO.jpg');
+  background-repeat: repeat;
+  background-size: 250px;
+  background-attachment: fixed;
+  background-position: center;
+}
+
+  </style>
+</head>
+
+<body class="bg-white font-sans text-gray-900">
+  <!-- Cabeçalho do site com logo e navegação -->
+<header class="flex items-center justify-between px-4 py-0 h-20 sm:h-24 md:h-28 border-b border-gray-200 sticky top-0 bg-white z-10">
+  <a href="index.html" class="flex items-center select-none cursor-pointer">
+    <img src="ANGELSOZINHO.jpg" alt="Logo AngelLips" class="h-16 sm:h-20 md:h-24 max-h-full w-auto mr-2 object-contain"
+      onerror="this.onerror=null;this.src='https://placehold.co/320x160?text=Logo&font=roboto&font_size=24&bg=edd4d3&txtclr=ad8681';" />
+    <span class="sr-only">AngelLips</span>
+  </a>
+  <nav class="space-x-4 uppercase text-sm font-semibold tracking-wide">
+    <a href="sobre.html" class="hover:text-pink-500 transition-colors duration-300">Sobre</a>
+    <a href="produtos.html" class="hover:text-pink-500 transition-colors duration-300">Produtos</a>
+    <a href="carrinho.html" class="hover:text-pink-500 transition-colors duration-300">Carrinho</a>
+  </nav>
+  <button aria-label="Conta do usuário" class="hover:text-pink-500 transition-colors duration-300">
+    <a href="conta.html" class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+        <circle cx="12" cy="7" r="4" />
+        <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
+      </svg>
+    </a>
+  </button>
+</header>
+
+  <!-- Conteúdo principal -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <h1 class="text-3xl font-bold text-center text-pink-700">Nossos Produtos</h1>
+    <p class="text-center mt-4 text-gray-700">Explore nossa linha de gloss labiais AngelLips — brilho, cor e hidratação para o seu GlowUp!</p>
+
+    <section class="flex flex-col gap-8 mt-8">
+
+      <!-- Gloss Hidratante -->
+      <article class="product-item">
+        <div class="product-image-container">
+          <img src="Hidratante.jpg" alt="Gloss Hidratante"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel';" />
+          <p class="font-semibold text-lg">R$ 23,00</p>
+        </div>
+        <div class="product-details text-center md:text-left">
+          <h3 class="font-bold text-xl mb-2 text-pink-600">Gloss Hidratante</h3>
+          <p class="text-gray-700 mb-4">
+            Nosso Gloss Hidratante é formulado com manteiga de karité e óleos vegetais,
+            proporcionando hidratação intensa e duradoura. Lábios macios e com brilho natural o dia todo.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 mb-6">
+            <li>Hidratação profunda</li>
+            <li>Brilho natural</li>
+            <li>Toque leve e suave</li>
+            <li>Ideal para uso diário</li>
+          </ul>
+          <button onclick="addToCart('Gloss Hidratante', 23.00)"
+                  class="bg-pink-500 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-600 transition-colors w-full md:w-auto">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </article>
+
+      <!-- Gloss Metálico -->
+      <article class="product-item">
+        <div class="product-image-container">
+          <img src="Metálico.jpg" alt="Gloss Metálico"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel';" />
+          <p class="font-semibold text-lg">R$ 30,00</p>
+        </div>
+        <div class="product-details text-center md:text-left">
+          <h3 class="font-bold text-xl mb-2 text-pink-600">Gloss Metálico</h3>
+          <p class="text-gray-700 mb-4">
+            Um toque glamuroso com brilho sofisticado. A fórmula do Gloss Metálico cria um acabamento luminoso e elegante.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 mb-6">
+            <li>Efeito metálico e cintilante</li>
+            <li>Cores modernas e vibrantes</li>
+            <li>Textura confortável</li>
+            <li>Alta durabilidade</li>
+          </ul>
+          <button onclick="addToCart('Gloss Metálico', 30.00)"
+                  class="bg-pink-500 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-600 transition-colors w-full md:w-auto">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </article>
+
+      <!-- Gloss Matte -->
+      <article class="product-item">
+        <div class="product-image-container">
+          <img src="Matte.jpg" alt="Gloss Matte"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel';" />
+          <p class="font-semibold text-lg">R$ 28,00</p>
+        </div>
+        <div class="product-details text-center md:text-left">
+          <h3 class="font-bold text-xl mb-2 text-pink-600">Gloss Matte</h3>
+          <p class="text-gray-700 mb-4">
+            O equilíbrio perfeito entre cor intensa e conforto. Acabamento aveludado sem craquelar.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 mb-6">
+            <li>Textura leve e seca rapidamente</li>
+            <li>Cor intensa e uniforme</li>
+            <li>Hidratação contínua</li>
+            <li>Visual sofisticado</li>
+          </ul>
+          <button onclick="addToCart('Gloss Matte', 28.00)"
+                  class="bg-pink-500 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-600 transition-colors w-full md:w-auto">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </article>
+
+      <!-- Gloss Tint -->
+      <article class="product-item">
+        <div class="product-image-container">
+          <img src="Tint.jpg" alt="Gloss Tint"
+               onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel';" />
+          <p class="font-semibold text-lg">R$ 22,00</p>
+        </div>
+        <div class="product-details text-center md:text-left">
+          <h3 class="font-bold text-xl mb-2 text-pink-600">Gloss Tint</h3>
+          <p class="text-gray-700 mb-4">
+            Cor leve e natural que realça o tom dos seus lábios. Ideal para um look “sem maquiagem”.
+          </p>
+          <ul class="list-disc list-inside text-gray-600 mb-6">
+            <li>Cor adaptável ao tom natural</li>
+            <li>Efeito “lábios saudáveis”</li>
+            <li>Textura leve e refrescante</li>
+            <li>Perfeito para o dia a dia</li>
+          </ul>
+          <button onclick="addToCart('Gloss Tint', 22.00)"
+                  class="bg-pink-500 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-600 transition-colors w-full md:w-auto">
+            Adicionar ao carrinho
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Rodapé -->
+  <footer class="border-t border-gray-200 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-gray-700 text-sm mt-10">
+    <div class="font-bold text-black mb-4 sm:mb-0">AngelLips</div>
+    <div class="flex flex-col sm:flex-row items-center">
+      <span class="text-gray-600">E-mail: <a href="mailto:angellipstalktous@gmail.com" class="hover:text-pink-400 transition-colors mb-2 sm:mb-0 sm:mr-4">angellipstalktous@gmail.com</a></span>
+      <span class="text-gray-600">Telefone: <a href="tel:1440028922" class="hover:text-pink-400 transition-colors">14 4002-8922</a></span>
+    </div>
+    <p>&copy; 2025 AngelLips.</p>
+  </footer>
+
+  <!-- Script do carrinho -->
+  <script>
+    function addToCart(productName, productPrice) {
+      const product = { name: productName, price: productPrice };
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`${productName} foi adicionado ao carrinho!`);
+      window.location.href = 'carrinho.html';
+    }
+  </script>
+
+  <!-- VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>new window.VLibras.Widget('https://vlibras.gov.br/app');</script>
+</body>
+</html>

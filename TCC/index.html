@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AngelLips - GlowUp</title>
+  <!-- Importa o Tailwind CSS para estilização rápida -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Estiliza a barra de rolagem dos cards de produto */
+    .product-card::-webkit-scrollbar {
+      height: 6px;
+    }
+    .product-card::-webkit-scrollbar-thumb {
+      background-color: rgba(156, 163, 175, 0.5);
+      border-radius: 20px;
+    }
+
+    /* Carregar fontes locais (coloque os arquivos em /fonts/) */
+    @font-face {
+      font-family: 'Horizon';
+      src: url('fonts/Horizon-Bold.woff2') format('woff2'),
+           url('fonts/Horizon-Bold.woff') format('woff');
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: 'BagotaLos';
+      src: url('fonts/BagotaLos-Regular.woff2') format('woff2'),
+           url('fonts/BagotaLos-Regular.woff') format('woff');
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    /* Aplicar só ao logo "AngelLips" */
+    .logo-font {
+      font-family: 'Horizon', 'BagotaLos', system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+  </style>
+<body class="bg-white font-sans text-gray-900">
+  <!-- Cabeçalho do site com logo e navegação -->
+
+<header class="flex items-center justify-between px-4 py-0 h-20 sm:h-24 md:h-28 border-b border-gray-200 sticky top-0 bg-white z-10">
+  <a href="index.html" class="flex items-center select-none cursor-pointer">
+    <img src="ANGELSOZINHO.jpg" alt="Logo AngelLips" class="h-16 sm:h-20 md:h-24 max-h-full w-auto mr-2 object-contain"
+      onerror="this.onerror=null;this.src='https://placehold.co/320x160?text=Logo&font=roboto&font_size=24&bg=edd4d3&txtclr=ad8681';" />
+    <span class="sr-only">AngelLips</span>
+  </a>
+  <nav class="space-x-4 uppercase text-sm font-semibold tracking-wide">
+    <a href="sobre.html" class="hover:text-pink-500 transition-colors duration-300">Sobre</a>
+    <a href="produtos.html" class="hover:text-pink-500 transition-colors duration-300">Produtos</a>
+    <a href="carrinho.html" class="hover:text-pink-500 transition-colors duration-300">Carrinho</a>
+  </nav>
+  <button aria-label="Conta do usuário" class="hover:text-pink-500 transition-colors duration-300">
+    <a href="conta.html" class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+        <circle cx="12" cy="7" r="4" />
+        <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
+      </svg>
+    </a>
+  </button>
+</header>
+
+  <!-- Seção principal com imagem e slogan -->
+  <section class="bg-gradient-to-b from-pink-100 to-pink-200 relative text-white py-20 px-6 sm:px-10 lg:px-20 flex flex-col md:flex-row items-center justify-center md:justify-between">
+    <div class="w-full md:w-1/2 flex justify-center md:justify-start mb-10 md:mb-0">
+      <!-- Imagem principal do site -->
+      <img src="Principal.png" alt="Foto Principal" width="995" height="150"
+        class="shadow-lg rounded-x1"
+        onerror="this.onerror=null;this
+        .src='https://placehold.co/250x600?text=Imagem+Indisponivel&font=roboto&font_size=24&bg=edd4d3&txtclr=ad8681';"
+      />
+    </div>
+    <!-- Slogan do site -->
+    <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold max-w-lg text-white drop-shadow-md text-center md:text-left">
+      Contribuindo para <br /> seu <span class="italic">GlowUp</span>
+    </h1>
+  </section>
+
+  <!-- Área de produtos em destaque -->
+  <main class="max-w-7xl mx-auto px-6 py-16">
+    <h2 class="text-center font-bold text-xl sm:text-2xl mb-12 uppercase">Produtos em destaque</h2>
+    <section class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+      <!-- Card do produto Gloss Hidratante -->
+      <article class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+        <img src="Hidratante.jpg" alt="Gloss Hidratante" width="500" height="100"
+          class="mb-8 max-h-50 object-contain"
+          onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel&font=roboto&font_size=14&bg=ddd&txtclr=000';"
+        />
+        <h3 class="font-semibold mb-1 text-center">Gloss Hidratante</h3>
+        <p class="mb-5 text-center">R$ 23,00</p>
+        <!-- Botão para adicionar ao carrinho -->
+        <button onclick="addToCart('Gloss Hidratante', 23.00)" class="bg-pink-400 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-500 transition-colors w-full max-w-xs">
+          Adicionar ao carrinho
+        </button>
+      </article>
+
+      <!-- Card do produto Gloss Metálico -->
+      <article class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+        <img src="Metálico.jpg" alt="Gloss Hidratante" width="500" height="100"
+          class="mb-8 max-h-50 object-contain"
+          onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel&font=roboto&font_size=14&bg=ddd&txtclr=000';"
+        />
+        <h3 class="font-semibold mb-1 text-center">Gloss Metálico</h3>
+        <p class="mb-6 text-center">R$ 30,00</p>
+        <!-- Botão para adicionar ao carrinho -->
+        <button onclick="addToCart('Gloss Metálico', 30.00)" class="bg-pink-400 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-500 transition-colors w-full max-w-xs">
+          Adicionar ao carrinho
+        </button>
+      </article>
+
+      <!-- Card do produto Gloss Matte -->
+      <article class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+        <img src="Matte.jpg" alt="Gloss Hidratante" width="500" height="100"
+          class="mb-8 max-h-50 object-contain"
+          onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel&font=roboto&font_size=14&bg=ddd&txtclr=000';"
+        />
+        <h3 class="font-semibold mb-1 text-center">Gloss Matte</h3>
+        <p class="mb-6 text-center">R$ 28,00</p>
+        <!-- Botão para adicionar ao carrinho -->
+        <button onclick="addToCart('Gloss Matte', 28.00)" class="bg-pink-400 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-500 transition-colors w-full max-w-xs">
+          Adicionar ao carrinho
+        </button>
+      </article>
+
+      <!-- Card do produto Gloss Tint -->
+      <article class="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center">
+        <img src="Tint.jpg" alt="Gloss Hidratante" width="500" height="100"
+          class="mb-8 max-h-50 object-contain"
+          onerror="this.onerror=null;this.src='https://placehold.co/150x400?text=Imagem+Indisponivel&font=roboto&font_size=14&bg=ddd&txtclr=000';"
+        />
+        <h3 class="font-semibold mb-1 text-center">Gloss Tint</h3>
+        <p class="mb-6 text-center">R$ 22,00</p>
+        <!-- Botão para adicionar ao carrinho -->
+        <button onclick="addToCart('Gloss Tint', 22.00)" class="bg-pink-400 text-white uppercase text-sm font-semibold py-2 px-4 rounded hover:bg-pink-500 transition-colors w-full max-w-xs">
+          Adicionar ao carrinho
+        </button>
+      </article>
+    </section>
+  </main>
+
+  <!-- Rodapé do site com informações de contato -->
+  <footer class="border-t border-gray-200 py-8 px-6 max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center text-gray-700 text-sm">
+    <div class="font-bold select-none cursor-default mb-4 sm:mb-0">AngelLips</div>
+    <div class="flex flex-col sm:flex-row items-center">
+      <!-- E-mail de contato -->
+      <span class="text-gray-600">E-mail: <a href="index.html" class="hover:text-pink-400 transition-colors mb-2 sm:mb-0 sm:mr-4">angellipstalktous@gmail.com</a></span>
+      <!-- Telefone de contato -->
+      <span class="text-gray-600">Telefone: <a href="index.html" class="hover:text-pink-400 transition-colors">14 4002-8922</a></span>
+    </div>
+    <p>&copy; 2025 AngelLips.</p>
+  </footer>
+  <script>
+    // Adiciona um produto ao carrinho e redireciona para a página do carrinho
+    function addToCart(productName, productPrice) {
+      const product = { name: productName, price: productPrice };
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      window.location.href = 'carrinho.html'; 
+    }
+  </script>
+  <!-- Plugin VLibras para acessibilidade em Libras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    // Libras
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>

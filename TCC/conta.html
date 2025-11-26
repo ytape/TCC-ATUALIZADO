@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Minha Conta - AngelLips</title>
+
+  <!-- Tailwind para o cabeçalho igual ao index -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    /* Fundo da página com logo repetida */
+    body {
+      background-image: url('ANGELSOZINHO.jpg');
+      background-repeat: repeat;
+      background-size:250px;
+      background-attachment: fixed;
+      background-position: center;
+      font-family: 'Urbanist', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Centraliza o card na tela */
+    .container {
+      width:100%;
+      max-width: 900px;
+      margin: 100px auto;
+      padding: 90px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* Card principal */
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 7px 2px rgba(0,0,0,0.1);
+      padding: 30px;
+      width: 50%;
+      text-align: center;
+    }
+
+    /* Abas de login/cadastro */
+      .tabs {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      background: none;
+      color: #d63384;
+      font-size: 16px;
+      border-bottom: 6px solid transparent;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      border-bottom: 2px solid #d63384;
+    }
+
+    /* Campos */
+    input {
+      width: 50%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 0.1px solid #d63384;
+      border-radius: 10px;
+      outline: none;
+    }
+
+    /* Botão */
+    button[type="submit"] {
+      width: 50%;
+      padding: 12px;
+      background: #d63384;
+      color: white;
+      border: none;
+      border-radius: 100px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    button[type="submit"]:hover {
+      background: #bf2a75;
+    }
+
+    .hidden {
+      display: none;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <!-- 🔸 Cabeçalho igual ao index -->
+<header class="flex items-center justify-between px-4 py-0 h-20 sm:h-24 md:h-28 border-b border-gray-200 sticky top-0 bg-white z-10">
+  <a href="index.html" class="flex items-center select-none cursor-pointer">
+    <img src="ANGELSOZINHO.jpg" alt="Logo AngelLips" class="h-16 sm:h-20 md:h-24 max-h-full w-auto mr-2 object-contain"
+      onerror="this.onerror=null;this.src='https://placehold.co/320x160?text=Logo&font=roboto&font_size=24&bg=edd4d3&txtclr=ad8681';" />
+    <span class="sr-only">AngelLips</span>
+  </a>
+  <nav class="space-x-4 uppercase text-sm font-semibold tracking-wide">
+    <a href="sobre.html" class="hover:text-pink-500 transition-colors duration-300">Sobre</a>
+    <a href="produtos.html" class="hover:text-pink-500 transition-colors duration-300">Produtos</a>
+    <a href="carrinho.html" class="hover:text-pink-500 transition-colors duration-300">Carrinho</a>
+  </nav>
+  <button aria-label="Conta do usuário" class="hover:text-pink-500 transition-colors duration-300">
+    <a href="conta.html" class="flex items-center">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 stroke-current" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-3-3.87" />
+        <circle cx="12" cy="7" r="4" />
+        <path d="M4 21v-2a4 4 0 0 1 3-3.87" />
+      </svg>
+    </a>
+  </button>
+</header>
+
+  <!-- 🔹 Seu card intacto -->
+  <div class="container">
+    <div class="card">
+      <div class="tabs">
+        <button id="loginTab" class="active" onclick="showTab('login')">Entrar</button>
+        <button id="registerTab" onclick="showTab('register')">Cadastrar</button>
+      </div>
+
+      <div id="loginForm" class="form-section">
+        <h2>Bem-vindo(a) de volta!</h2>
+        <form action="login.php" method="POST">
+          <input type="text" name="usuario" placeholder="Nome de usuário" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Entrar</button>
+        </form>
+      </div>
+
+      <div id="registerForm" class="form-section hidden">
+        <h2>Crie sua conta</h2>
+        <form action="cadastrar.php" method="POST">
+          <input type="text" name="nome" placeholder="Nome completo" required>
+          <input type="text" name="usuario" placeholder="Nome de usuário" required>
+          <input type="email" name="email" placeholder="E-mail" required>
+          <input type="password" name="senha" placeholder="Senha" required>
+          <button type="submit">Cadastrar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para alternar abas -->
+  <script>
+    function showTab(tab) {
+      const loginForm = document.getElementById('loginForm');
+      const registerForm = document.getElementById('registerForm');
+      const loginTab = document.getElementById('loginTab');
+      const registerTab = document.getElementById('registerTab');
+
+      if (tab === 'login') {
+        loginForm.classList.remove('hidden');
+        registerForm.classList.add('hidden');
+        loginTab.classList.add('active');
+        registerTab.classList.remove('active');
+      } else {
+        registerForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        registerTab.classList.add('active');
+        loginTab.classList.remove('active');
+      }
+    }
+  </script>
+
+  <!-- VLibras -->
+  <div vw class="enabled">
+    <div vw-access-button class="active"></div>
+    <div vw-plugin-wrapper>
+      <div class="vw-plugin-top-wrapper"></div>
+    </div>
+  </div>
+  <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+  <script>
+    new window.VLibras.Widget('https://vlibras.gov.br/app');
+  </script>
+</body>
+</html>
